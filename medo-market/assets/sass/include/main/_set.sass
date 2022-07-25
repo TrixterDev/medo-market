@@ -1,0 +1,117 @@
+.set
+  padding: 5rem 0
+  width: 100%
+  opacity: 0
+  transform: translatex(100px)
+  &-show
+    opacity: 1
+    transition: all 1s
+    transform: translatex(0%)
+  &__bg
+    margin-top: 11.25rem
+    background: #fff
+  &__title
+    h1
+      text-align: center
+      font-size: 2.8125rem
+      font-weight: normal
+      font-family: $abe
+      margin-bottom: 3.125rem
+  &__gallery
+    display: grid
+    justify-content: center
+    grid-template-columns: repeat(3, 25.9375rem)
+    grid-gap: 30px
+    width: 100%
+  &__grid
+    border-radius: 1.25rem
+    position: relative
+    width: 100%
+    transition: .6s all
+    &:first-child
+      background: url(../../img/gallery/gallery1.png) no-repeat
+      background-size: cover
+      grid-area: 1 / 1 / 3 / 2
+      height: 43.75rem
+      display: table-cell
+      vertical-align: bottom
+      transition: .2s all
+    &:nth-child(2)
+      background: url(../../img/gallery/gallery2.png)
+      background-size: cover
+      height: 20.9375rem
+      grid-area: 1 / 2 / 2 / 3
+    &:nth-child(3)
+      background: url(../../img/gallery/gallery3.png) no-repeat
+      background-size: cover
+      height: 20.9375rem
+      grid-area: 1 / 3 / 2 / 4
+    &:last-child
+      background: url(../../img/gallery/gallery4.png) no-repeat
+      background-size: cover
+      height: 20.9375rem
+      grid-area: 2 / 2 / 3 / 4
+    &:hover
+      transform: scale(.9)
+  &__grid-content
+    font-family: $prox
+    position: absolute
+    bottom: 0
+    right: 0
+    left: 0
+    padding: 1.5625rem
+    text-align: center
+    color: #fff
+    background: linear-gradient(180deg, rgba(17, 16, 16, 0) 0%, rgba(17, 16, 16, 0.534) 72.92%)
+    backdrop-filter: blur(3px)
+    border-radius: 1.25rem
+    span
+      font-weight: bold
+      font-size: 1.5rem
+      display: inline-block
+      margin-bottom: .625rem
+
+@media screen and ( max-width: 85rem )
+  .set
+    &__gallery
+      grid-template-columns: repeat(2, 20rem)
+      grid-template-rows: repeat(3, 1fr)
+      transition: .6s all
+    &__grid
+      &:nth-child(3)
+        grid-area: 3 / 3 / 3 / 1
+        margin-left: auto
+        margin-right: auto
+      &:last-child
+        grid-area: 2 / 2 / 3 / 3
+@media screen and ( max-width: 47.8125rem )
+  .set
+    &__bg
+      margin-top: 52px
+    &__gallery
+      grid-template-columns: repeat(1, 20rem)
+      grid-template-rows: repeat(4, 1fr)
+    &__grid
+      &:first-child
+        grid-area: 1 / 1 / 3 / 3
+        width: 75%
+        height: 20.9375rem  
+        margin-left: auto
+        margin-right: auto
+      &:nth-child(2)
+        grid-area: 2 / 1 / 4 /3
+        width: 75%
+        margin-left: auto
+        margin-right: auto
+      &:nth-child(3)
+        grid-area: 3 / 1 / 5 / 3
+        width: 75%
+      &:last-child
+        grid-area: 4 / 1 / 5 / 3
+        width: 75%
+        margin-left: auto
+        margin-right: auto
+
+@media screen and ( max-width: 49.0625rem )
+  .set
+    transform: translateX(0)

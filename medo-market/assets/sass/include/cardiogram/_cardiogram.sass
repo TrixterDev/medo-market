@@ -1,0 +1,288 @@
+.cardiogram
+  font-family: $m
+  &__content
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    padding: .9375rem
+  &__nav
+    position: relative
+    display: flex
+    align-items: center
+    margin-top: 1.5625rem
+    a
+      color: #fff
+      padding: .3125rem 1.875rem
+      &:first-child
+        background: #c4c4c4
+        clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 0% 50%, 0% 0%)
+      &:nth-child(2)
+        background: #c4c4c4
+        position: absolute
+        left: 6.5625rem
+        clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%)
+      &:last-child
+        background: $bg
+        position: absolute
+        left: 12.9688rem
+        clip-path: polygon(91% 0, 99% 50%, 91% 100%, 0% 99%, 6.5% 50%, 0% 0%)
+  &__title
+    margin-top: 2.5rem
+    margin-bottom: 2.5rem
+  &__cards
+    display: grid
+    width: 100%
+    align-items: flex-start
+    grid-template-columns: repeat(3, 270px)
+    grid-column-gap: 3.125rem
+    grid-row-gap: 1.875rem
+  &__card
+    width: 15rem
+    height: 22.625rem
+    margin-left: auto
+    margin-right: auto
+    background: #fff
+    padding: .9375rem
+    position: relative
+    border-radius: 1.25rem
+    font-family: $mon
+    ion-icon
+      font-size: 1.25rem
+      color: #979797
+      font-weight: bold
+    a
+      &:last-child
+          padding: .3125rem 1.5625rem
+          background: #71E8D2
+          color: #fff
+          display: inline-block
+          margin-top: 40px
+          border-radius: .5rem
+          border: .125rem solid #71E8D2
+          font-family: $r
+          transition: .6s all
+          &:hover
+            background: none
+            color: #71E8D2
+    &-content
+      text-align: center
+      img
+        margin-top: 4.0625rem
+    &-desc
+      margin-top: .9375rem
+      p
+        width: 10.625rem
+        margin-left: auto
+        margin-right: auto
+      span
+        color: #858997
+        display: inline-block
+        margin-top: .3125rem
+  &__sell
+    position: absolute
+    background-size: cover
+    top: 0
+    right: 0
+    background: url(../../img/card/Bg.svg) no-repeat
+    width: 105px
+    height: 6.5625rem
+    border-top-right-radius: 1.25rem 
+    span
+      transform: rotate(45deg)
+      display: inline-block
+      position: absolute
+      top: 1.6875rem
+      right: 0
+      font-size: .75rem
+      color: #fff
+  &__product
+    position: relative
+    &-info
+      width: 925px
+  &__filter
+    position: relative
+    &-title
+      h1
+        text-align: center
+        border: 2px solid $bg
+        font-family: $r
+        font-size: 1.75rem
+        width: 197px
+        padding-top: 12px 
+        height: 42px
+        color: #fff
+        font-weight: 400
+        font-size: 1.5rem
+        text-transform: uppercase
+        background: $bg
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: -0.0625rem
+        position: relative
+        border-radius: 5px 5px 0 0
+        &:after,
+        &:before
+          content:''
+          width: 40px
+          height: 30px
+          border: 2px solid $bg
+          position: absolute
+          border-radius: .3125rem
+          bottom:-3px
+          border-top:0
+        &:after
+          border-left:0
+          border-radius:0 0 5px 0
+          border-radius:0 0 5px 0
+          left:-42px
+        &:before
+          border-right:0
+          border-radius:0 0 0 5px
+          border-radius:0 0 0 5px
+          right:-42px
+    &-btn
+      border: .125rem solid $bg
+      border-radius: .3125rem
+      padding: .3125rem
+      p
+        text-align: center
+        padding: .625rem
+        width: 15.625rem
+        margin-bottom: .9375rem
+        margin-top: .9375rem
+        background: $bg
+        border-radius: 8px 
+        font-weight: 600
+        border: .125rem solid $bg 
+        color: #fff
+        transition: .1s all
+        &:active
+          background: none
+          color: $bg
+  &__accordion
+    transform: translateZ(0)
+    width: 16.875rem
+    &-toggle
+      position: absolute
+      opacity: 0
+      display: none
+      &:checked ~ label:after
+        transform: translatey(-2px)
+      &:checked ~ section
+        height: 8.5rem
+    &-filter
+      padding-left: 20px
+      line-height: 19px
+      display: flex
+      margin-top: .9375rem
+      align-items: center
+      label
+        font-size: 1rem
+        margin-left: .625rem
+      input
+        width: 1rem
+        height: 1rem
+      &:first-child
+        margin-top: 0
+  &__accordion> label
+    position: relative
+    display: block
+    padding:  20px
+    font-size: 14px
+    font-weight: 700
+    border-top: 1px solid #000
+    cursor: pointer
+    &:after 
+      content: '\f078'
+      position: absolute
+      top: 22px
+      right: 20px
+      height: max-content
+      font-family: fontawesome
+      transform: rotate(180deg)
+      transition: .3s transform
+  &__accordion> section
+    height: 0
+    transition: .3s all
+    overflow: hidden
+  &__sorting
+    margin-top: 2.5rem
+    p
+      padding: .625rem .9375rem
+      font-weight: 400
+      color: #fff
+      background: $bg
+      border-radius: .5rem
+      width: max-content
+      margin-left: auto
+      margin-right: auto
+      cursor: pointer
+    &-content
+      max-height: 0
+      overflow: hidden
+      position: sticky
+      transition: .3s all
+      top: 2.1875rem
+      right: -1.25rem
+      color: #ffffff
+      z-index: 99
+      width: max-content
+      margin-left: auto
+      margin-right: auto
+      margin-top: .625rem
+    &-content.is-active
+      max-height: 295px
+      padding-bottom: .625rem
+      transition: .9s all
+    &-btn
+      display: flex
+      flex-direction: column
+      border: .1875rem solid $bg
+      border-radius: .5rem
+      padding: .625rem
+      margin-top: .9375rem
+      button
+        background: none
+        color: $bg
+        border: none
+        border: .125rem solid $bg
+        font-weight: 500
+        padding: .625rem
+        margin-top: .3125rem
+        ounline: none
+        width: max-content
+        margin-left: auto
+        margin-right: auto
+        border-radius: .5rem
+        cursor: pointer
+        transition: .3s all
+        &:hover
+          background: $bg
+          color: #fff
+      p
+        color: $bg
+        text-align: center
+        border-bottom: .125rem solid $bg
+        margin-bottom: .625rem
+      &:first-child
+        margin-top: 0
+
+@media screen and ( max-width: 1245px )
+  .cardiogram
+    &__cards
+      grid-template-columns: repeat(2, 16.875rem)
+
+@media screen and ( max-width: 57.8125rem )
+  .cardiogram
+    &__cards
+      grid-template-columns: repeat(1, 16.875rem)
+    &__title
+      text-align: center
+
+@media screen and ( max-width: 37.8125rem )
+  .cardiogram
+    &__content
+      flex-direction: column
+      align-items: center
+    &__filter
+      margin-bottom: 2.1875rem

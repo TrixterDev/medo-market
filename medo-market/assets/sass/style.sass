@@ -1,0 +1,136 @@
+// GLOBAL
+@import fonts
+@import var
+// GLOBAL
+
+// MAIN
+@import layout/header
+@import include/main/banner
+@import include/main/product
+@import include/main/set
+@import include/main/about
+@import include/main/ver
+@import include/main/connect
+@import layout/footer
+// MAIN
+
+//404
+@import include/404
+//404
+
+// CATALOG
+@import include/catalog/catalog
+// CATALOG
+
+// CARDIOGRAM
+@import include/cardiogram/cardiogram
+@import include/cardiogram/info-cardiogram
+// CARDIOGRAM
+
+// CONTACT
+@import include/contact/contact
+// CONTACT
+
+// SET
+@import include/sets/sets
+// SET
+
+
+
+
+::-webkit-scrollbar-track
+  // box-shadow: 0px 0px 8px 7px rgba(24, 60, 80, 0.31) inset
+  border: 1.5px solid $bg
+  background: #70E6CE
+
+::-webkit-scrollbar-thumb
+  margin-top: 100px
+  background: $bg
+  width: .3125rem
+::-webkit-scrollbar 
+    width: 10px
+    height: 10px
+    background-color: #FFFFFF
+  
+
+::-webkit-scrollbar-button  
+  background: $bg
+
+::-webkit-resizer  // 7 - изменение размеров */
+  width: .3125rem
+
+*
+  padding: 0
+  margin: 0
+  text-decoration: none
+  list-style: none
+  color: inherit
+  user-select: none
+
+.container
+  max-width: 82.5rem
+  margin: 0 auto
+
+.wrapper
+  background: $green
+  height: 100%
+
+.bg-gray
+  img
+    &:first-child
+      position: absolute
+      top: 62px
+      right: 0
+      left: 0 
+      width: 100%
+      height: 1080px
+      min-height: 7.5rem
+      margin-left: auto
+      margin-right: auto
+    &:nth-child(2)
+      position: absolute
+      top: 56.4375rem
+      left: 0 
+      width: 420px
+      margin-left: auto
+      margin-right: auto
+    &:nth-child(3)
+      position: absolute
+      top: 191.4375rem
+      right: 7.5rem
+      width: 420px
+      margin-left: auto
+      margin-right: auto
+    &:last-child
+      position: absolute
+      top: 263.4375rem
+      left: 10.625rem
+      width: 180px
+      margin-left: auto
+      margin-right: auto
+
+@media screen and ( max-width: 26.5625rem )
+  .bg-gray
+    img
+      &:last-child
+        width: 100%
+      &:nth-child(2)
+        width: 100%
+      &:nth-child(3)
+        width: 100%
+@media screen and ( max-width: 85rem )
+  .bg-gray
+    img
+      &:last-child
+        top: 222.4375rem
+        right: -140px
+        width: 17.5rem
+        opacity: .4
+      &:nth-child(3)
+        display: none
+
+@media screen and ( max-width: 66.875rem )
+  .bg-gray
+    img
+      &:last-child
+        display: none

@@ -1,0 +1,731 @@
+.cardiogram-info
+  font-family: $m
+  &__content
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    padding: .9375rem
+  &__nav
+    position: relative
+    display: flex
+    align-items: center
+    margin-top: 1.5625rem
+    a
+      color: #fff
+      padding: .3125rem 1.875rem
+      &:first-child
+        background: #c4c4c4
+        clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 0% 50%, 0% 0%)
+      &:nth-child(2)
+        background: #c4c4c4
+        position: absolute
+        left: 6.5625rem
+        clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0% 100%, 15% 50%, 0% 0%)
+      &:nth-child(3)
+        background: #c4c4c4
+        position: absolute
+        left: 208px
+        clip-path: polygon(93% 0, 100% 50%, 93% 100%, 0% 100%, 6.5% 50%, 0% 0%)
+      &:last-child
+        background: $bg
+        position: absolute
+        left: 29.0625rem
+        clip-path: polygon(91% 0, 99% 50%, 91% 100%, 0% 99%, 6.5% 50%, 0% 0%)
+  &__product
+    width: 51.25rem
+    margin-top: 5.625rem
+    &-info
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin-bottom: 2.3125rem
+    &-price
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+      h1
+        width: 20rem
+        text-align: right
+        font-weight: 500
+      span
+        font-family: $mon
+        font-weight: 700
+        color: $bg
+        font-size: 1.5rem
+        display: inline-block
+        margin-top: 1.5625rem
+        margin-bottom: 1.5625rem
+      a
+        font-size: 1.125rem
+        font-family: $r
+        font-weight: 600
+        padding: .625rem 1.875rem
+        background: #70E6CE
+        color: #fff
+        border-radius: .5rem
+        border: 3px solid #70E6CE
+        transition: .6s all
+        &:hover
+          background: none
+          color: #70E6CE
+    &-features
+      margin-bottom: 7.5rem
+      border-top: 2px solid $bg
+      width: 100%
+      ul.tabs
+        font-family: $mon
+        display: flex
+        align-items: center
+        transition: .6s all
+        li
+          margin-right: .3125rem
+          cursor: pointer
+          padding: 10px
+          border: .0625rem solid $bg
+          border-top: 0
+          color: $bg
+          font-weight: 700
+          overflow: hidden
+          position: relative
+      .tab_last
+        border-right: 1px solid #333
+      ul.tabs li
+        &.active
+          background: $bg
+          color: #fff
+          border-bottom: 1px solid #fff
+          display: block
+      .tab_content
+        padding: 20px
+        display: none
+        line-height: 1.8125rem
+        li
+          list-style: inside
+      .tab_drawer_heading
+        display: none
+    &-accordion
+      display: none
+      width: 100%
+      margin-top: 5.625rem
+      margin-bottom: 6.25rem
+      &-content
+        list-style: inside
+      .transition
+        transition: all 0.25s ease-in-out
+      .flipIn
+        animation: flipdown 0.5s ease both
+      .no-select
+        -webkit-tap-highlight-color: rgba(0,0,0,0)
+        -webkit-touch-callout: none
+        -webkit-user-select: none
+        -khtml-user-select: none
+        -moz-user-select: none
+        -ms-user-select: none
+        user-select: none
+      h2
+        font-size: 20px
+        line-height: 34px
+        font-weight: 300
+        letter-spacing: 1px
+        display: block
+        padding: .625rem
+        margin: 0
+        cursor: pointer
+        @extend .no-select
+      p
+        color: #fff
+        list-style: inside
+        line-height: 26px
+        letter-spacing: 1px
+        position: relative
+        border: .0625rem solid #ffff
+        padding: .3125rem
+        overflow: hidden
+        display: inline-block
+        max-height: 800px
+        margin-top: .625rem
+        @extend .transition
+        opacity: 1
+        transform: translate( 0 , 0 )  
+        margin-top: 14px
+        z-index: 2
+        text-align: left
+        display: block
+        &:first-child
+          margin-top: 0
+      span
+        color: #fff
+        list-style: inside
+        line-height: 26px
+        letter-spacing: 1px
+        position: relative
+        overflow: hidden
+        display: inline-block
+        max-height: 800px
+        margin-top: .625rem
+        width: 100%
+        text-align: left
+        padding-left: 20px
+        @extend .transition
+        opacity: 1
+        transform: translate( 0 , 0 )  
+        margin-top: 14px
+        z-index: 2
+        display: block
+        &:first-child
+          margin-top: 0
+        &::after
+          content: ""
+          height: 5px
+          width: 5px
+          background: #fff
+          position: absolute
+          left: 0px
+          border-radius: 50%
+          z-index: 99
+          top: 10px
+      ul
+        position: relative
+        
+        li
+          position: relative
+          background: $bg
+          padding: .625rem
+          color: #fff
+          text-align: center
+          @extend .flipIn
+          &:nth-of-type(1)
+            animation-delay: 0.5s
+          &:nth-of-type(2)
+            animation-delay: 0.75s
+          &:nth-of-type(3)
+            animation-delay: 1.0s
+          i
+            position: absolute
+            transform: translate( -6px , 0 )
+            top: 53px
+            &:before , &:after
+              background: #fff
+              content: ""
+              @extend .transition
+              position: absolute
+              width: 1.5px
+              height: 9px
+            &:before
+              transform: translate( -2px , 0 ) rotate( 45deg )
+            &:after
+              transform: translate( 4px , 0 ) rotate( -45deg )
+          input[type=checkbox]
+            position: absolute
+            left: 0
+            right: 0
+            cursor: pointer
+            width: 100%
+            text-align: center
+            height: 100% 
+            padding: .625rem
+            z-index: 1
+            opacity: 0
+            &:checked
+              &~p
+                margin-top: 0
+                max-height: 0
+                opacity: 0
+                transform: translate( 0 , 50% )
+              &~span
+                margin-top: 0
+                max-height: 0
+                opacity: 0
+                transform: translate( 0 , 50% )
+                  
+              &~i
+                &:before
+                  transform: translate( 2px , 0 ) rotate( 45deg )
+                
+                &:after
+                  transform: translate( -4px , 0 ) rotate( -45deg )      
+
+      @keyframes flipdown
+        0%
+          opacity: 0
+          transform-origin: top center
+          transform: rotateX(-90deg)
+        5%
+          opacity: 1
+        80%
+          transform: rotateX(8deg)
+        83%
+          transform: rotateX(6deg)
+        92%
+          transform: rotateX(-3deg)
+        100%
+          transform-origin: top center
+          transform: rotateX(0deg) 
+  &__filter
+    width: max-content
+    margin-top: 5.625rem
+    &-btn
+      display: none
+      padding: .625rem
+      color: #fff
+      background: $bg
+      font-weight: 700
+      font-family: $mon
+      border: .125rem solid $bg
+      transition: .6s all
+      margin-top: 3.125rem
+      width: max-content
+      &:hover
+        background: none
+        color: $bg
+    .transition
+      transition: all 0.25s ease-in-out
+    .flipIn
+      animation: flipdown 0.5s ease both
+    .no-select
+      -webkit-tap-highlight-color: rgba(0,0,0,0)
+      -webkit-touch-callout: none
+      -webkit-user-select: none
+      -khtml-user-select: none
+      -moz-user-select: none
+      -ms-user-select: none
+      user-select: none
+    h2
+      width: max-content
+      font-weight: 500
+      font-size: 1.25rem
+    a
+      color: #000
+      line-height: 26px
+      letter-spacing: 1px
+      position: relative
+      overflow: hidden
+      display: inline-block
+      max-height: 800px
+      margin-top: .625rem
+      @extend .transition
+      opacity: 1
+      transform: translate( 0 , 0 )  
+      margin-top: 14px
+      z-index: 2
+      display: block
+      &:first-child
+        margin-top: 0
+    ul
+      list-style: none
+      perspective: 900
+      padding: 0
+      margin: 0
+      li
+        position: relative
+        padding: 0
+        margin: 0
+        padding-bottom: 4px
+        margin-top:  .9375rem
+        border-top: 1px solid #000000
+        @extend .flipIn
+        &:nth-of-type(1)
+          animation-delay: 0.5s
+        &:nth-of-type(2)
+          animation-delay: 0.75s
+        &:nth-of-type(3)
+          animation-delay: 1.0s
+        &:last-of-type
+          padding-bottom: 0
+        &:first-child
+          margin-top: 0
+        i
+          position: absolute
+          transform: translate( -20px , 0 )
+          margin-top: 7px
+          left: 18.75rem
+          &:before , &:after
+            content: ""
+            @extend .transition
+            position: absolute
+            background-color: #000
+            width: 1px
+            height: 9px
+          &:before
+            transform: translate( -2px , 0 ) rotate( 45deg )
+          &:after
+            transform: translate( 4px , 0 ) rotate( -45deg )
+        input[type=checkbox]
+          position: absolute
+          cursor: pointer
+          width: 100%
+          height: 100%
+          z-index: 1
+          opacity: 0
+          &:checked
+            &~a
+              margin-top: 0
+              max-height: 0
+              opacity: 0
+              transform: translate( 0 , 50% )
+            &~i
+              &:before
+                transform: translate( 2px , 0 ) rotate( 45deg )
+              &:after
+                transform: translate( -4px , 0 ) rotate( -45deg )
+    @keyframes flipdown
+      0%
+        opacity: 0
+        transform-origin: top center
+        transform: rotateX(-90deg)
+      5%
+        opacity: 1
+      80%
+        transform: rotateX(8deg)
+      83%
+        transform: rotateX(6deg)
+      92%
+        transform: rotateX(-3deg)
+      100%
+        transform-origin: top center
+        transform: rotateX(0deg)
+    .active__nav  
+      color: $bg
+
+  &__swiper
+    h1
+      text-align: center
+      font-weight: 500
+      margin-bottom: 30px
+    .cardiogram-swiper
+      height: 465px
+      margin-bottom: 9.375rem
+  &__card
+    width: 14.75rem
+    height: 22.625rem
+    margin-left: auto
+    margin-right: auto
+    background: #fff
+    padding: .9375rem
+    position: relative
+    border-radius: 1.25rem
+    font-family: $mon
+    ion-icon
+      font-size: 1.25rem
+      color: #979797
+      font-weight: bold
+    a
+      &:last-child
+          padding: .3125rem 1.5625rem
+          background: #71E8D2
+          color: #fff
+          display: inline-block
+          margin-top: 40px
+          border-radius: .5rem
+          border: .125rem solid #71E8D2
+          font-family: $r
+          transition: .6s all
+          &:hover
+            background: none
+            color: #71E8D2
+    &-content
+      text-align: center
+      img
+        margin-top: 4.0625rem
+    &-desc
+      margin-top: .9375rem
+      p
+        width: 10.625rem
+        margin-left: auto
+        margin-right: auto
+      span
+        color: #858997
+        display: inline-block
+        margin-top: .3125rem
+  &__sell
+    position: absolute
+    background-size: cover
+    top: 0
+    right: 0
+    background: url(../../img/card/Bg.svg) no-repeat
+    width: 105px
+    height: 6.5625rem
+    border-top-right-radius: 1.25rem 
+    span
+      transform: rotate(45deg)
+      display: inline-block
+      position: absolute
+      top: 1.6875rem
+      right: 0
+      font-size: .75rem
+      color: #fff
+
+
+@media screen and ( max-width: 74.375rem )
+  .cardiogram-info
+    &__filter.is-active
+      max-height: 28.125rem
+      padding: .9375rem
+      border-radius: .75rem
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+      color: #fff
+      padding-right: 2.5rem
+      transition: .6s all
+    &__filter
+      max-height: 0
+      overflow: hidden
+      position: absolute
+      top: 14.75rem
+      left: 0
+      background: $bg
+      color: #fff
+      z-index: 99
+      transition: .3s all
+      ul
+        li
+          border-top: .0938rem solid #fff
+          i
+            &::before, &::after
+              background: #fff
+      a
+        color: #70E6CE
+      &-btn
+        display: block
+    &__product
+      margin-left: auto
+      margin-right: auto
+    .active__nav
+      color: #fff
+
+@media screen and ( max-width: 46.875rem )
+  .cardiogram-info
+    &__nav
+      display: none
+    &__filter
+      margin-top: 1.5625rem
+@media screen and ( max-width: 43.4375rem )
+  .cardiogram-info
+    &__product
+      &-features
+        display: none
+      &-accordion
+        display: block
+      &-info
+        flex-direction: column
+        text-align: center
+        img
+          width: 70%
+      &-price
+        align-items: center
+        h1
+          text-align: center
+          font-size: 1.25rem
+          width: 100%
+        span
+          font-size: 1.125rem
+
+
+
+.cd-popup
+  position: fixed
+  left: 0
+  top: 0
+  height: 100%
+  width: 100%
+  background-color: rgba(94, 110, 141, 0.9)
+  opacity: 0
+  visibility: hidden
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s
+  transition: opacity 0.3s 0s, visibility 0s 0.3s
+  overflow-y: auto
+  z-index: 10000
+
+  &.is-visible
+    opacity: 1
+    visibility: visible
+    -webkit-transition: opacity 0.3s 0s, visibility 0s 0s
+    -moz-transition: opacity 0.3s 0s, visibility 0s 0s
+    transition: opacity 0.3s 0s, visibility 0s 0s
+
+.cd-popup-container
+  overflow-x: hidden
+  border: none
+  position: relative
+  width: 82% !important
+  max-width: 82% !important
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  background: #fff
+  border-radius: .25em .25em .4em .4em
+  text-align: center
+  box-shadow: none
+  -webkit-transform: translateY(-40px)
+  -moz-transform: translateY(-40px)
+  -ms-transform: translateY(-40px)
+  -o-transform: translateY(-40px)
+  transform: translateY(-40px)
+
+  /* Force Hardware Acceleration in WebKit
+  -webkit-backface-visibility: hidden
+  -webkit-transition-property: -webkit-transform
+  -moz-transition-property: -moz-transform
+  transition-property: transform
+  -webkit-transition-duration: 0.3s
+  -moz-transition-duration: 0.3s
+  transition-duration: 0.3s
+
+  p
+    margin: 0
+    padding: 3em 1em
+    padding-top: 1em
+
+  .cd-popup-close
+    position: absolute
+    top: 8px
+    right: 8px
+    width: 30px
+    height: 30px
+
+.cd-close-button
+  color: #545454
+  border-bottom: none
+
+.cd-popup-container .cd-popup-close
+  &::before
+    -webkit-transform: rotate(45deg)
+    -moz-transform: rotate(45deg)
+    -ms-transform: rotate(45deg)
+    -o-transform: rotate(45deg)
+    transform: rotate(45deg)
+    left: 8px
+
+  &::after
+    -webkit-transform: rotate(-45deg)
+    -moz-transform: rotate(-45deg)
+    -ms-transform: rotate(-45deg)
+    -o-transform: rotate(-45deg)
+    transform: rotate(-45deg)
+    right: 8px
+
+.is-visible .cd-popup-container
+  -webkit-transform: translateY(0)
+  -moz-transform: translateY(0)
+  -ms-transform: translateY(0)
+  -o-transform: translateY(0)
+  transform: translateY(0)
+
+@media only screen and (min-width: 1170px)
+  .cd-popup-container
+    margin: 2em auto
+
+/* Contact Form
+
+label:hover
+  cursor: text !important
+
+.contact-form
+  background: #ffffff !important
+  height: auto
+  margin: 100px auto
+  max-width: 82%
+  overflow: hidden !important
+  width: 100%
+  -moz-border-radius: 5px
+  -webkit-border-radius: 5px
+  border-radius: 5px
+  -moz-box-shadow: rgba(26, 26, 26, 0.1) 0 1px 3px 0
+  -webkit-box-shadow: rgba(26, 26, 26, 0.1) 0 1px 3px 0
+  box-shadow: rgba(26, 26, 26, 0.1) 0 1px 3px 0
+
+  .email, .message, .name
+    overflow-x: hidden
+    position: relative !important
+    -moz-border-radius: none !important
+    -webkit-border-radius: none !important
+    border-radius: none !important
+
+  .email
+    input:focus, textarea:focus
+      background: #f4f5f6 !important
+
+  .message
+    input:focus, textarea:focus
+      background: #f4f5f6 !important
+
+  .name
+    input:focus, textarea:focus
+      background: #f4f5f6 !important
+
+  .email label, .message label, .name label
+    color: #cbd0d3 !important
+    left: 23px !important
+    position: absolute !important
+    top: 23px !important
+    -moz-transition: all, 150ms !important
+    -o-transition: all, 150ms !important
+    -webkit-transition: all, 150ms !important
+    transition: all, 150ms !important
+
+  .email.typing label, .message.typing label, .name.typing label
+    color: #3498db !important
+    font-size: 10px !important
+    top: 7px !important
+
+  .email, .name
+    width: calc(50% - 1px) !important
+
+  .email input, .name input
+    padding: 23px 0 8px 23px !important
+
+  .email
+    border-left: 1px #e6e6e6 solid !important
+    float: right !important
+
+  .message
+    border-bottom: 1px #e6e6e6 solid !important
+    border-top: 1px #e6e6e6 solid !important
+    clear: both !important
+
+    textarea
+      height: 200px !important
+      padding: 23px !important
+
+  .name
+    float: left !important
+
+  .submit
+    background: #f4f5f6 !important
+    display: block !important
+    overflow: hidden !important
+    padding: 23px !important
+    margin-bottom: 2em
+
+    .user-message
+      float: left !important
+      padding-top: 22px !important
+
+@media (max-width: 500px)
+  .contact-form
+    margin: 0
+    padding-top: 1em
+    width: 100% !important
+    max-width: 100% !important
+    -moz-border-radius: 0px
+    -webkit-border-radius: 0px
+    border-radius: 0px
+    -moz-box-shadow: rgba(26, 26, 26, 0.1) 0 0px 0px 0
+    -webkit-box-shadow: rgba(26, 26, 26, 0.1) 0 0px 0px 0
+    box-shadow: rgba(26, 26, 26, 0.1) 0 0px 0px 0
+
+@media (max-width: 500px)
+  .contact-form
+    .email, .name
+      width: 100% !important
+
+@media (max-width: 500px)
+  .contact-form .email
+    border-left: none !important
+    border-top: 1px #e6e6e6 solid !important
+
+@media (max-width: 500px)
+  .contact-form .submit .user-message
+    float: none !important
+    padding: 0 0 10px !important
